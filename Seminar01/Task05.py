@@ -3,3 +3,18 @@
 # Пример:
 # - A (3,6); B (2,1) -> 5,09
 # - A (7,-5); B (1,-1) -> 7,21
+import math
+
+x1 = int(input("Введите x1: "))
+y1 = int(input("Введите y1: "))
+x2 = int(input("Введите x2: "))
+y2 = int(input("Введите y2: "))
+
+sqr1 = (x1 - x2) * (x1 - x2)
+sqr2 = (y1 - y2) * (y1 - y2)
+
+sum = sqr1 + sqr2
+
+result = math.sqrt(sum)
+
+print(result)
