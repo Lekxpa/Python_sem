@@ -5,3 +5,12 @@
 
     # Для n=4 {1: 2, 2: 2.25, 3: 2.37, 4: 2.44}
     # Сумма 9.06
+
+N = int(input('Введите число n: '))
+sumn = 0
+a = 1
+for i in range(N):
+    a = (1 + 1 / a) ** a
+    sumn = sumn + a
+    print(a, end = ' ')
+print('\n' 'Сумма чисел равна', sumn)
