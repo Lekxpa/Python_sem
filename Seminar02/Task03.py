@@ -14,5 +14,5 @@ def SummOfElements():
         numbers[i] = round((1 + 1 / i) ** i, 2)
         sumN = numbers[i] + sumN
     print(numbers)
-    print('\n' 'Сумма чисел равна: ', round((sumN), 2))
+    print('Сумма чисел равна: ', round((sumN), 2))
 SummOfElements()
