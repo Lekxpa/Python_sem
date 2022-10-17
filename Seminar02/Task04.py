@@ -16,9 +16,12 @@ if 0 < a < N + 1:
     b = 0
     while b < a:
         index = int(input(f'Введите значение {b + 1}-й позиции: ' ''))
-        print(f'Значение элемента: {numbers[index]}')
-        res *= numbers[index]
-        b+=1
+        if index < N:
+            print(f'Значение элемента: {numbers[index]}')
+            res *= numbers[index]
+            b+=1
+        else:
+            print('Неверно указано значение')
     print(f'Произведение элементов на указанных позициях: {res}')
 else:
     print(f'Неверно указано значение. Количество позиций элементов должно быть в диапазоне от 1 до {N}')
