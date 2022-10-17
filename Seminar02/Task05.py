@@ -6,7 +6,7 @@ N = int(input('Введите число: '))
 numbers = []
 for i in range(N):
     numbers.append(random.randint(-N,N))
-print(numbers)
+print(f'Исходный список: {numbers}')
 
 def shake(numbers):
     list = numbers[:]
@@ -17,4 +17,4 @@ def shake(numbers):
         list[i] = list[index]
         list[index] = temp
     return list
-print(shake(numbers))
+print(f'Итоговый список: {shake(numbers)}')
