@@ -1,21 +1,20 @@
 # Реализуйте алгоритм перемешивания списка.
 
+import random
 
-from random import Random, randint
-
-N = int(input('Введите число '))
+N = int(input('Введите число: '))
 numbers = []
 for i in range(N):
-    numbers.append(randint(-N,N+1))
+    numbers.append(random.randint(-N,N+1))
 print(numbers)
 
-def smes(numbers):
+def shake(numbers):
     list = numbers[:]
     numbers_length = len(list)
     for i in range(numbers_length):
-        index = randint(0, numbers_length - 1)
+        index = random.randint(0, numbers_length - 1)
         temp = list[i]
         list[i] = list[index]
         list[index] = temp
     return list
-print(smes(numbers))
+print(shake(numbers))
