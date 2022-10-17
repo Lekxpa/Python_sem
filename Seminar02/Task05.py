@@ -5,7 +5,7 @@ import random
 N = int(input('Введите число: '))
 numbers = []
 for i in range(N):
-    numbers.append(random.randint(-N,N+1))
+    numbers.append(random.randint(-N,N))
 print(numbers)
 
 def shake(numbers):

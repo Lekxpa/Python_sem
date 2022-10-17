@@ -11,7 +11,7 @@
 
 N = int(input('Введите число '))
 numbers = []
-for i in range(N):
+for i in range(-N,N+1):
     numbers.append(-N,N+1)
 print(numbers)
 
