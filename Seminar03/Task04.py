@@ -14,6 +14,4 @@ while n > 0:
     a = n % 2
     b = str(a) + b
     n = n // 2
-    # if a == 1:
-    #      i += 1
 print(f'Двоичное число из {N} -> {b}')
