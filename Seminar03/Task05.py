@@ -6,41 +6,18 @@
 # [-21 ,13, -8, 5, −3, 2, −1, 1, 0, 1, 1, 2, 3, 5, 8, 13, 21] 
 # [Негафибоначчи]
 
-
-
-
-
-# def FibanachiNEgativeAndPositive(argFib):
-#     """
-#     Positive part
-#     """
-#     fibPosit = []
-#     if argFib < 1:
-#         print("Empty list")
-#         return fibPosit
-#     else:
-#         fibPosit.append(1)
-#     if argFib > 1:
-#         fibPosit.append(1)
-#     else:
-#         return [1, 0, 1]  
-#     if argFib > 2:
-#         for i in range(2, argFib):
-#             fibPosit.append(fibPosit[i - 1] + fibPosit[i - 2])
-#         """
-#         Positive part
-#         """
-#         fibNegat = fibPosit.copy()
-#         for i in range(argFib):
-#             fibNegat[i] = fibNegat[i] * (-1) ** i
-#         fibNegat.reverse()
-#         """
-#         Concatination
-#         """
-#         fibFull = fibNegat + [0] + fibPosit
-#         return fibFull
-#     else:
-#         return [-1, 1, 0, 1, 1]
-
-# n = int(input('Enter the argument for Fibanachi \n'))
-# print (FibanachiNEgativeAndPositive(n))
+k = int(input("Введите число:"))
+listFibn = []
+listFibn2 = []
+listFibn.insert(0,0)
+listFibn.insert(1,1)
+for i in range(2,k + 1):
+    # listFibn[i] = listFibn[i - 1] + listFibn[i - 2]
+    m = listFibn[i - 1] + listFibn[i - 2]
+    listFibn.append(m)
+    j = (- 1) ** (i + 1) * listFibn[i]
+    listFibn2.insert(0,j)
+print(listFibn)
+print(listFibn2)
+listFibn2.extend(listFibn)
+print(listFibn2)
