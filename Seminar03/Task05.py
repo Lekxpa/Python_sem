@@ -12,12 +12,9 @@ listFibn2 = []
 listFibn.insert(0,0)
 listFibn.insert(1,1)
 for i in range(2,k + 1):
-    # listFibn[i] = listFibn[i - 1] + listFibn[i - 2]
     m = listFibn[i - 1] + listFibn[i - 2]
     listFibn.append(m)
     j = (- 1) ** (i + 1) * listFibn[i]
     listFibn2.insert(0,j)
-print(listFibn)
-print(listFibn2)
 listFibn2.extend(listFibn)
 print(listFibn2)
