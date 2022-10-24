@@ -7,3 +7,8 @@
 
 # Результат:
 # 40x⁹ - x⁸ -5x⁷ + 15x⁶ +5x⁴ + 5x³ + x² - 13x + 53 = 0
+
+f = open('Numb1.txt','r')
+f.close()
+e = open('Numb2.txt','r')
+e.close()
