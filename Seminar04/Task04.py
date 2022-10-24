@@ -14,20 +14,40 @@
 
 from random import randint
 
-k = int(input('Задайте натуральную степень '))
-# k = 10
-ratiosList = []
+k = int(input('Задайте максимальную натуральную степень '))
+lstOfCoef = []
+total_list = []
 for i in range(k + 1):
-    ratiosList.append(randint(1, 100))
-print(f'Список коэффициентов: {ratiosList}') 
-formula = ''
+    lstOfCoef.append(randint(-100, 100))
+print(f'Список коэффициентов: {lstOfCoef}') 
+
+polynomial = ''
+l = len(polynomial)
 for i in range(k-1):
-    formula = formula + str(ratiosList[i]) + 'x' + '^' + str(k - i) + ' + '
-formula = formula + str(ratiosList[k-1]) + 'x' + ' + '
-formula = formula + str(ratiosList[k]) + ' = 0'
+    if lstOfCoef[i] == 0:
+        polynomial = polynomial
+    elif lstOfCoef[i] == 1:
+        polynomial = polynomial + 'x' + '^' + str(k - i) + ' + '
+    else:
+        polynomial = polynomial + str(lstOfCoef[i]) + 'x' + '^' + str(k - i) + ' + '
+if lstOfCoef[k-1] == 0:
+    polynomial = polynomial
+elif lstOfCoef[k-1] == 1:
+    polynomial = polynomial + 'x' + ' + '
+else:
+    polynomial = polynomial + str(lstOfCoef[k-1]) + 'x' + ' + '
+if lstOfCoef[k] == 0:
+    # remove_last = polynomial[:l-4]
+    polynomial = polynomial + ' = 0'
+else:
+    polynomial = polynomial + str(lstOfCoef[k]) + ' = 0'
+if polynomial.find('+ -'):
+    polynomial = polynomial.replace('+ -','- ')
+if polynomial.find('- 1x'):
+    polynomial = polynomial.replace('- 1x','- x')
 
-print(formula)
-# print(type(formula))
 
-with open('Task33 Polnominal.txt', 'w') as p:
-    p.write(formula)
+print(polynomial)
+
+with open('Task04Sem04.txt', 'w') as f:
+    f.write(polynomial)
