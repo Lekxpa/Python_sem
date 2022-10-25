@@ -18,7 +18,7 @@ k = int(input('Задайте максимальную натуральную с
 lstOfCoef = []
 total_list = []
 for i in range(k + 1):
-    lstOfCoef.append(randint(-100, 100))
+    lstOfCoef.append(randint(-1, 1))
 print(f'Список коэффициентов: {lstOfCoef}') 
 
 polynomial = ''
@@ -28,6 +28,8 @@ for i in range(k-1):
         polynomial = polynomial
     elif lstOfCoef[i] == 1:
         polynomial = polynomial + 'x' + '^' + str(k - i) + ' + '
+    elif lstOfCoef[i] == -1:
+        polynomial = polynomial + '- x' + '^' + str(k - i) + ' + '
     else:
         polynomial = polynomial + str(lstOfCoef[i]) + 'x' + '^' + str(k - i) + ' + '
 if lstOfCoef[k-1] == 0:
@@ -37,15 +39,21 @@ elif lstOfCoef[k-1] == 1:
 else:
     polynomial = polynomial + str(lstOfCoef[k-1]) + 'x' + ' + '
 if lstOfCoef[k] == 0:
-    # remove_last = polynomial[:l-4]
     polynomial = polynomial + ' = 0'
 else:
-    polynomial = polynomial + str(lstOfCoef[k]) + ' = 0'
+    polynomial = polynomial + ' + ' + str(lstOfCoef[k]) + ' = 0'
 if polynomial.find('+ -'):
-    polynomial = polynomial.replace('+ -','- ')
+    polynomial = polynomial.replace('+ -',' - ')
 if polynomial.find('- 1x'):
-    polynomial = polynomial.replace('- 1x','- x')
-
+    polynomial = polynomial.replace('- 1x',' - x')
+if polynomial.find('+   -'):
+    polynomial = polynomial.replace('+   -',' - ')
+if polynomial.find('+  ='):
+    polynomial = polynomial.replace('+  =',' = ')
+if polynomial.find('+  ='):
+    polynomial = polynomial.replace('+  =',' = ')
+if polynomial.find('+  + '):
+    polynomial = polynomial.replace('+  + ',' + ')
 
 print(polynomial)
 
