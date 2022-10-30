@@ -186,3 +186,7 @@ print(f'Сумма многочленов: {s}')
 
 t = open('ResPoly)04_4.txt','w', encoding='utf-8')
 t.write(s)
+
+f.close() 
+e.close()
+t.close()
