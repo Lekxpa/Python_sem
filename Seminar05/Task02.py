@@ -5,3 +5,13 @@
 # a) Добавьте игру против бота
 
 # b) Подумайте как наделить бота ""интеллектом""
+
+
+n = int(input('Задайте последовательность цифр: '))
+strn = str(n)
+lstend = []
+for i in strn:
+    if strn.count(i) == 1:
+        lstend.append(i)
+int_lstend = [int(x) for x in lstend]
+print(f'Список неповторяющихся элементов: {int_lstend}')

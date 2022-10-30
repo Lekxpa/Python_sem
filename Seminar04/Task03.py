@@ -11,4 +11,5 @@ lstend = []
 for i in strn:
     if strn.count(i) == 1:
         lstend.append(i)
-print(f'Список неповторяющихся элементов: {lstend}')
+int_lstend = [int(x) for x in lstend]
+print(f'Список неповторяющихся элементов: {int_lstend}')
