@@ -163,3 +163,6 @@ for key, value in w.items():
 s += ' = 0'
     
 print(f'Сумма многочленов: {s}')
+
+t = open('ResPoly)04_4.txt','w', encoding='utf-8')
+t.write(s)
