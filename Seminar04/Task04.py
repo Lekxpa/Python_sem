@@ -18,7 +18,7 @@ k = int(input('Задайте максимальную натуральную с
 lstOfCoef = []
 total_list = []
 for i in range(k + 1):
-    lstOfCoef.append(randint(-1, 1))
+    lstOfCoef.append(randint(-99, 100))
 print(f'Список коэффициентов: {lstOfCoef}') 
 
 polynomial = ''

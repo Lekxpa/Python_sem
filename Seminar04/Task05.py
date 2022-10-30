@@ -8,7 +8,7 @@
 # Результат:
 # 40x⁹ - x⁸ -5x⁷ + 15x⁶ +5x⁴ + 5x³ + x² - 13x + 53 = 0
 
-import re
+import re 
 
 f = open('Numb1.txt','r', encoding='utf-8')
 e = open('Numb2.txt','r', encoding='utf-8')
@@ -20,22 +20,45 @@ print(ls2)
 
 ls1 = ls1.replace(' = 0','')
 ls2 = ls2.replace(' = 0','')
+ls1 = ls1.replace(' ','')
+ls2 = ls2.replace(' ','')
 # ls1 = ls1.replace('x','*x')
 # ls2 = ls2.replace('x','*x')
 # ls1 = ls1.replace(' - ','')
 # ls2 = ls2.replace(' - ','')
 # ls1 = ls1.replace('x^ + ','')
 # ls2 = ls2.replace('^','')
+
 print(ls1)
 print(ls2)
-print(len(ls1))
+
+
+# print(len(ls1))
 numbers_plus = ['0','1','2','3','4','5','6','7','8','9', '+', '-']
 numbers = ['0','1','2','3','4','5','6','7','8','9']
 
-lf = re.findall('\d+', ls1)
-lf1 = re.findall('\d+', ls2)
-print(lf)
-print(lf1)
+for 
+
+
+
+
+
+
+
+
+
+
+
+
+# for i in range(len(ls1)):
+#     if '^' in ls1[i]:
+#         print(ls1[i+1])
+#         ls1 = ls1.replace('('^' + ls1[i+1]','')
+#         print(ls1)
+# lf = re.findall('\d+', ls1) #извлекает число из строки
+# lf1 = re.findall('\d+', ls2)
+# print(lf)
+# print(lf1)
 
 # ls1 = ls1.replace('x^numbers','')
 # ls2 = ls2.replace('^','')
@@ -53,33 +76,86 @@ ls2Coef = []
 ls1Coef1 = []
 m = 0
 n = 0
+a = 0
+b = 0
+
+
+# for element in ls1:
+#     if 'x' in element:
+#         ls1Coef.append(element.split('x'))
+#     else:
+#         absolute1 = element
+
+# for element in ls2:
+#     if 'x' in element:
+#         ls2Coef.append(element.split('x'))
+#     else:
+#         absolute2 = element
+
+# # absoluteTotal = absolute1 + absolute2
+
+# print(ls1Coef)
+# print(ls2Coef)
+
+# lst1 = set(ls1) - set(ls2)
+# print(lst1)
+
+# coeffs = ls1.coeffs()
+# l = free.symbols(ls1)
+
+# regex = r"([+-]?\d*\.?\d*)\*[a-zA-Z]+\^?(\d*)|([+-]?\d+\.?\d*)"
+# res = re.findall(regex,ls1)
+# print(res)
+
+# print("string =", ls1)
+# ls1S = re.split(r'([+-])', ls1)
+# print(ls1)
+
+
+# for i in range(len(ls1)):
+#     while ls1[i] != '-' and ls1[i] != '+' and ls1[i] != '=':
+#         i += 1
+#     else:
+#         ls1.pop(ls1[i-1])
+     
+        
+
+
+# for i in range(len(ls1)):
+#     if ls1[i] == 'x' and ls1[i + 1] == '^':
+#         n = ls1[i + 2]
+#         ls1Coef1 = ls1Coef1.remove(n)
+# print(ls1Coef1)
+
 
 for i in range(len(ls1)):
-    if ls1[i] == 'x' and ls1[i + 1] == '^':
-        n = ls1[i + 2]
-        ls1Coef1 = ls1Coef1.remove(n)
-print(ls1Coef1)
- 
-for i in range(len(ls1)):
     if type(ls1[i]) is int and ls1[i + 1] == 'x':
-        n = ls1[i]
+        ls1Coef.append(ls1[i].split('x'))
+    # if type(ls1[i]) is int:
+        # n = ls1[i]
         ls1Coef.append(n)
     elif 'x' in ls1[i]:
         if '^' in ls1[i + 1]:
             m = 'x' + '^' + ls1[i + 2]
+        # ls1Coef = ls1.replace(m,'')
+        # i +=1
         else:
             m = 'x^1'
         ls1key.append(m)
+        # ls1Coef = ls1.replace(m,'')
+        ls1Coef = ls1.replace(ls1[i+2],'')
+            # i+=1
     # if ls1[i] in range(-100,100):
     # if ls1[i] in range(-100,100) and ls1[i + 1] in range(-100,100):
     # if ls1[i] is numbers and ls1[i + 1] is numbers:
-    else:
-        if type(ls1[i]) is int and type(ls1[i + 1]) is int:
-        # n = ls1[i].split(ls1[i + 1])
-            n = ls1[i] * 10 + ls1[i + 1]
-        # n = ls1Coef.split(ls1[i] + ls1[i + 1])
-            ls1Coef.append(n)
-        # i += 1
+    # else:
+    #     if type(ls1[i]) is int and type(ls1[i + 1]) is int:
+    #     # n = ls1[i].split(ls1[i + 1])
+    #         n = ls1[i] * 10 + ls1[i + 1]
+    #     # n = ls1Coef.split(ls1[i] + ls1[i + 1])
+    #         ls1Coef.append(n)
+    #     # i += 1
+    # ls1Coef = ls1.pop(ls1key[i])
 print(ls1key)    
 print(ls1Coef)
 
@@ -90,9 +166,10 @@ for i in range(len(ls2)):
     # if ls1[i] in range(-100,100):
     # if ls1[i] in range(-100,100) and ls1[i + 1] in range(-100,100):
     # if ls1[i] is numbers and ls1[i + 1] is numbers:
-    if type(ls2[i]) is int and type(ls2[i + 1]) is int:
-        # n = ls1[i].split(ls1[i + 1])
-        n = ls2[i] * 10 + ls2[i + 1]
+    # if type(ls2[i]) is int and type(ls2[i + 1]) is int:
+    if type(ls2[i]) is int:
+        n = ls2[i].split(ls2[i + 1])
+        # n = ls2[i] * 10 + ls2[i + 1]
         # n = ls1Coef.split(ls1[i] + ls1[i + 1])
         ls2Coef.append(n)
         # i += 1
@@ -110,6 +187,11 @@ for i in range(len(ls2)):
 
 print(ls2Coef)
 print(ls2key)
+
+
+
+
+# my_dictFull = my_dict1 + my_dict2 #concatination dict
 
 # for element in ls1:
 #     if 'x' in element:
