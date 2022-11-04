@@ -38,7 +38,6 @@ while TotalBonbon > 0:
         print(f'\nНа столе \033[34m{TotalBonbon}\033[0m конфеты')
     elif TotalBonbon > 4:
         print(f'\nНа столе \033[34m{TotalBonbon}\033[0m конфет')
-    # print(f'\nНа столе \033[34m{TotalBonbon}\033[0m конфет')
     takeBonbon = int(input(f'\033[32m{currentTurn}\033[0m, сколько конфет берете себе (от 1 до {maxTakeBonbon})? '))
     if TotalBonbon > 28:
         if takeBonbon not in range(1, maxTakeBonbon + 1):
