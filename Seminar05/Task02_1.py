@@ -34,9 +34,11 @@ else:
 print(f'\nПервый ход у игрока: \033[32m{currentTurn}\033[0m')
 takeBonbon = 0
 while TotalBonbon > 0:
-    if TotalBonbon == 1 or TotalBonbon == 21:
+    if TotalBonbon == 11 or TotalBonbon == 12 or TotalBonbon == 13 or TotalBonbon == 14:
+        print(f'\nНа столе \033[34m{TotalBonbon}\033[0m конфет')
+    elif TotalBonbon == 1 or TotalBonbon % 10 == 1:
         print(f'\nНа столе \033[34m{TotalBonbon}\033[0m конфета')
-    elif TotalBonbon == 2 or TotalBonbon == 3 or TotalBonbon == 4 or TotalBonbon == 22 or TotalBonbon == 23 or TotalBonbon == 24:
+    elif TotalBonbon == 2 or TotalBonbon == 3 or TotalBonbon == 4 or TotalBonbon % 10 == 2 or TotalBonbon % 10 == 3 or TotalBonbon % 10 == 4:
         print(f'\nНа столе \033[34m{TotalBonbon}\033[0m конфеты')
     elif TotalBonbon > 4:
         print(f'\nНа столе \033[34m{TotalBonbon}\033[0m конфет')
@@ -44,18 +46,22 @@ while TotalBonbon > 0:
         turnofBot = 0
         if TotalBonbon > maxTakeBonbon and turnofBot in range(maxTakeBonbon + 1):
             turnofBot = random.randint(1,29)
-            if turnofBot == 1 or turnofBot == 21:
+            if turnofBot == 11 or turnofBot == 12 or turnofBot == 13 or turnofBot == 14:
+                print(f'\033[32m{currentTurn}\033[0m: я беру себе {turnofBot} конфет')
+            elif turnofBot == 1 or turnofBot % 10 == 1:
                 print(f'\033[32m{currentTurn}\033[0m: я беру себе {turnofBot} конфету')
-            elif turnofBot == 2 or turnofBot == 3 or turnofBot == 4 or turnofBot == 22 or turnofBot == 23 or turnofBot == 24:
+            elif turnofBot == 2 or turnofBot == 3 or turnofBot == 4 or turnofBot % 10 == 2 or turnofBot % 10 == 3 or turnofBot % 10 == 4:
                 print(f'\033[32m{currentTurn}\033[0m: я беру себе {turnofBot} конфеты')
             elif turnofBot > 4:
                 print(f'\033[32m{currentTurn}\033[0m: я беру себе {turnofBot} конфет')
         elif TotalBonbon < maxTakeBonbon + 1 and turnofBot < TotalBonbon:
             # turnofBot = random.randint(1,TotalBonbon)
             turnofBot = TotalBonbon
-            if turnofBot == 1 or turnofBot == 21:
+            if turnofBot == 11 or turnofBot == 12 or turnofBot == 13 or turnofBot == 14:
+                print(f'\033[32m{currentTurn}\033[0m: я беру себе {turnofBot} конфет')
+            elif turnofBot == 1 or turnofBot % 10 == 1:
                 print(f'\033[32m{currentTurn}\033[0m: я беру себе {turnofBot} конфету')
-            elif turnofBot == 2 or turnofBot == 3 or turnofBot == 4 or turnofBot == 22 or turnofBot == 23 or turnofBot == 24:
+            elif turnofBot == 2 or turnofBot == 3 or turnofBot == 4 or turnofBot % 10 == 2 or turnofBot % 10 == 3 or turnofBot % 10 == 4:
                 print(f'\033[32m{currentTurn}\033[0m: я беру себе {turnofBot} конфеты')
             elif turnofBot > 4:
                 print(f'\033[32m{currentTurn}\033[0m: я беру себе {turnofBot} конфет')

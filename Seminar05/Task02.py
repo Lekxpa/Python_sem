@@ -32,9 +32,11 @@ else:
 print(f'\nПервый ход у игрока: \033[32m{currentTurn}\033[0m')
 
 while TotalBonbon > 0:
-    if TotalBonbon == 1 or TotalBonbon == 21:
+    if TotalBonbon == 11 or TotalBonbon == 12 or TotalBonbon == 13 or TotalBonbon == 14:
+        print(f'\nНа столе \033[34m{TotalBonbon}\033[0m конфет')
+    elif TotalBonbon == 1 or TotalBonbon % 10 == 1:
         print(f'\nНа столе \033[34m{TotalBonbon}\033[0m конфета')
-    elif TotalBonbon == 2 or TotalBonbon == 3 or TotalBonbon == 4 or TotalBonbon == 22 or TotalBonbon == 23 or TotalBonbon == 24:
+    elif TotalBonbon == 2 or TotalBonbon == 3 or TotalBonbon == 4 or TotalBonbon % 10 == 2 or TotalBonbon % 10 == 3 or TotalBonbon % 10 == 4:
         print(f'\nНа столе \033[34m{TotalBonbon}\033[0m конфеты')
     elif TotalBonbon > 4:
         print(f'\nНа столе \033[34m{TotalBonbon}\033[0m конфет')
