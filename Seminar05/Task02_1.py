@@ -55,7 +55,6 @@ while TotalBonbon > 0:
             elif turnofBot > 4:
                 print(f'\033[32m{currentTurn}\033[0m: я беру себе {turnofBot} конфет')
         elif TotalBonbon < maxTakeBonbon + 1 and turnofBot < TotalBonbon:
-            # turnofBot = random.randint(1,TotalBonbon)
             turnofBot = TotalBonbon
             if turnofBot == 11 or turnofBot == 12 or turnofBot == 13 or turnofBot == 14:
                 print(f'\033[32m{currentTurn}\033[0m: я беру себе {turnofBot} конфет')
@@ -65,9 +64,6 @@ while TotalBonbon > 0:
                 print(f'\033[32m{currentTurn}\033[0m: я беру себе {turnofBot} конфеты')
             elif turnofBot > 4:
                 print(f'\033[32m{currentTurn}\033[0m: я беру себе {turnofBot} конфет')
-        # elif TotalBonbon < maxTakeBonbon + 1 and turnofBot > TotalBonbon:
-        #     print(f'\033[32m{currentTurn}\033[0m: слишком много хотела взять конфет - {turnofBot} штук. Попробую еще раз!')
-        #     continue
         takeBonbon = turnofBot
     else:
         takeBonbon = int(input(f'\033[32m{currentTurn}\033[0m, сколько конфет берете себе (от 1 до {maxTakeBonbon})? '))
