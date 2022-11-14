@@ -7,7 +7,7 @@
 from random import randint
 
 lst = [randint(0,10) for i in range(int(input('Введите количество элементов в списке: ')))]
-res_lst = list(map(lambda x: lst[x] * lst[len(lst) - x - 1], range(len(lst)//2 + 1)))
+res_lst = list(map(lambda x: lst[x] * lst[len(lst) - x - 1], range((len(lst) + 1)//2)))
 print(f'Исходный список: {lst}\
         \nПроизведение пар чисел: {res_lst}')
 

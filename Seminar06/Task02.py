@@ -1,21 +1,29 @@
-# Задайте последовательность цифр. Напишите программу, которая выведет 
-# список неповторяющихся элементов исходной последовательности.
+# Задайте список из нескольких чисел. Напишите программу, 
+# которая найдёт сумму элементов списка, стоящих на нечётной позиции.
 # Пример:
-# 47756688399943 -> [5]
-# 1113384455229 -> [8,9]
-# 1115566773322 -> []
+# - [2, 3, 5, 9, 3] -> на нечётных позициях элементы 3 и 9, ответ: 12
 
-lst = list(map(int, input("Задайте последовательность цифр: ")))
-int_lstend = list(filter(lambda x: lst.count(x) == 1, lst))
-print(f'Список неповторяющихся элементов: {int_lstend}')
+from random import randint
+
+lst = [randint(0,10) for i in range(int(input('Введите количество элементов в списке: ')))]
+res_lst = [sum(lst[i] for i in filter(lambda x: x % 2 == 1, range(len(lst))))]
+print(f'Исходный список: {lst}\
+        \nСумма элементов нечетных позиций: {res_lst}')
 
 
-# # первое решение
-# n = int(input('Задайте последовательность цифр: '))
-# strn = str(n)
-# lstend = []
-# for i in strn:
-#     if strn.count(i) == 1:
-#         lstend.append(i)
-# int_lstend = [int(x) for x in lstend]
-# print(f'Список неповторяющихся элементов: {int_lstend}')
+
+# первое решение
+
+# N = int(input('Введите количество элементов в списке: '))
+# numbers = []
+# for i in range(N):
+#     numbers.append(random.randint(0,N))
+# print(f'Список: {numbers}')
+
+# res = 0
+# index = 1
+# while index < len(numbers):
+#     res = res + numbers[index]
+#     print(numbers[index], end = '  ')
+#     index +=2
+# print('\n' f'Сумма элементов нечетных позиций = {res}')

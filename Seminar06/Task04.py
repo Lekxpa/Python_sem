@@ -1,29 +1,22 @@
-# Задайте список из нескольких чисел. Напишите программу, 
-# которая найдёт сумму элементов списка, стоящих на нечётной позиции.
-# Пример:
-# - [2, 3, 5, 9, 3] -> на нечётных позициях элементы 3 и 9, ответ: 12
+# Задайте список из n чисел последовательности (1 + 1/n)^n 
+#и выведите на экран их сумму.
+#*Пример:*
+    # Для n=4 {1: 2, 2: 2.25, 3: 2.37, 4: 2.44}
+    # Сумма 9.06
 
-from random import randint
-
-lst = [randint(0,10) for i in range(int(input('Введите количество элементов в списке: ')))]
-res_lst = [sum(lst[i] for i in filter(lambda x: x % 2 == 1, range(len(lst))))]
-print(f'Исходный список: {lst}\
-        \nСумма элементов нечетных позиций: {res_lst}')
+n = int(input('Введите число n: '))
+res_lst = [sum(i for i in list(map(lambda x: round((1 + 1 / x) ** x, 2), range (1, n + 1))))]
+print(f'Сумма: {res_lst}')
 
 
-
-# первое решение
-
-# N = int(input('Введите количество элементов в списке: '))
-# numbers = []
-# for i in range(N):
-#     numbers.append(random.randint(0,N))
-# print(f'Список: {numbers}')
-
-# res = 0
-# index = 1
-# while index < len(numbers):
-#     res = res + numbers[index]
-#     print(numbers[index], end = '  ')
-#     index +=2
-# print('\n' f'Сумма элементов нечетных позиций = {res}')
+#  первое решение
+# def SummOfElements():
+#     n = int(input('Введите число n: '))
+#     sumN = 0
+#     numbers = {}
+#     for i in range (1, n + 1):
+#         numbers[i] = round((1 + 1 / i) ** i, 2)
+#         sumN = numbers[i] + sumN
+#     print(numbers)
+#     print('Сумма чисел равна: ', round((sumN), 2))
+# SummOfElements()
