@@ -3,7 +3,7 @@ def csv_file():
     ls = v.read()
     ls = ls.replace(';', '|')
     with open('Phonebook.md', 'a', encoding = 'utf-8') as filecsv:
-        filecsv.write(f'\n|{ls}|\n|')
+        filecsv.write(f'\n|{ls}|\n')
     v.close()
     filecsv.close()
 
