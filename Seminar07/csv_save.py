@@ -7,7 +7,7 @@ def csv_file():
     lst3 = lst2.replace('Фамилия Имя Отчество','')
     ls4 = lst3.replace('\n','')
     lst_end = ls4.split('|')
-    with open ('phonebook.csv', 'a', encoding = 'utf-8') as filecsv:
+    with open ('phonebook.csv', 'w', encoding = 'utf-8') as filecsv:
         for i in range(4,len(lst_end),3):
             filecsv.write(f'{lst_end[i]};{lst_end[i+1]};\n')
     v.close()
