@@ -1,11 +1,11 @@
 from telegram import Update
 from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes
 import datetime
-import spy
-# from spy import log
+# import spy
+from spy import log
 
 async def hello(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    spy.log
+    log(Update,context)
     await update.message.reply_text(f'Hello, {update.effective_user.first_name}')
 
 async def time(update: Update, context: ContextTypes.DEFAULT_TYPE):
