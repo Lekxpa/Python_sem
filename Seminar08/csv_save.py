@@ -13,6 +13,3 @@ def csv_file():
             filecsv.write(f'{lst_end[i]};{lst_end[i+1]};{lst_end[i+2]};\n')
     v.close()
     filecsv.close()
-
-    # for i in range(4,len(lst_end),3):
-    #         filecsv.write(f'{lst_end[i]};{lst_end[i+1]};\n')
