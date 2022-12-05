@@ -1,4 +1,4 @@
-from creating_md1 import creating_md1
+from creating_md import creating_md
 
 def show_phonbook_terminal():
     f = open('Phonebook.md','r', encoding='utf-8')
@@ -46,7 +46,7 @@ def del_dt():
     t = input('Введите значение, которое необходимо удалить: \n')
     line = 0
     with open ('Phonebook.md', 'a', encoding = 'utf-8') as filedel:
-        creating_md1()
+        creating_md()
         for i in range(5, len(lst5)-2, 4):
             line = '|' + lst5[i] + '|' + lst5[i+1] + '|' + lst5[i+2] + '|'
             if t not in line:
