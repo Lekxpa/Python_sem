@@ -29,7 +29,7 @@ async def look_at_phonebook(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text(f"look_at")
 
 
-async send_document(chat_id, document, caption=None, disable_notification=None, reply_to_message_id=None, 
+async def send_document(chat_id, document, caption=None, disable_notification=None, reply_to_message_id=None, 
 reply_markup=None, parse_mode=None, thumb=None, disable_content_type_detection=None, allow_sending_without_reply=None, 
 caption_entities=None, protect_content=None, message_thread_id=None, *, filename=None, read_timeout=None, write_timeout=20, 
 connect_timeout=None, pool_timeout=None, api_kwargs=None)
