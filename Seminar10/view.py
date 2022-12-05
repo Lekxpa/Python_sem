@@ -3,9 +3,8 @@ import txt_save
 import txt
 from view_add_hand import symple_add
 import csv_save
-from actions import show_phonbook_terminal
-from actions import search
-from actions import del_dt
+from actions_show import show_phonbook_terminal
+from actions_search import search
 
 # выбор действия - загрузка или выгрузка данных, показать телефонную книгу в терминале
 def select_an_action():
@@ -13,8 +12,7 @@ def select_an_action():
         \n1. Добавить данные в справочник\
         \n2. Выгрузить данные из справочника\
         \n3. Просмотр телефонной книги\
-        \n4. Поиск данных\
-        \n5. Удаление данных\n'))
+        \n4. Поиск данных\n'))
     if data == 1:
         dt = int(input('Выберите порядок ввода данных: \
             \n1. Добавить данные вручную\
@@ -47,7 +45,5 @@ def select_an_action():
         show_phonbook_terminal()
     elif data == 4:
         search()
-    elif data == 5:
-        del_dt()
     else:
         print('Неверно выбрано действие. Попробуйте еще раз!')
